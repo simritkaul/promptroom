@@ -1,26 +1,28 @@
-import '@styles/globals.css';
-import Nav from '@components/Nav';
-import Provider from '@components/Provider';
+import "@styles/globals.css";
+import Nav from "@components/Nav";
+import Provider from "@components/Provider";
 
 export const metadata = {
   title: "Promptroom",
-  description: "Discover and Share Cool AI Prompts"
-}
+  description: "Discover and Share Cool AI Prompts",
+};
 
-const RootLayout = ({children}) => {
+const RootLayout = ({ children }) => {
   return (
     <html lang="en">
-    <body>
-      <div className='main'>
-        <div className='gradient'/>
-      </div>
-      <main className="app">
-        <Nav />
-        {children}
-      </main>
-    </body>
+      <body>
+        <Provider>
+          <div className="main">
+            <div className="gradient" />
+          </div>
+          <main className="app">
+            <Nav />
+            {children}
+          </main>
+        </Provider>
+      </body>
     </html>
-  )
-}
+  );
+};
 
-export default RootLayout
+export default RootLayout;
